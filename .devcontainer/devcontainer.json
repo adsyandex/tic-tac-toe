@@ -1,8 +1,0 @@
-{
-    "forwardPorts": [8080],
-    "name": "tic-tac-toe",
-    "build": {
-      "dockerfile": "Dockerfile"
-    }
-  }
-  
