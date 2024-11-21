@@ -1,0 +1,6 @@
+FROM golang:1.20
+WORKDIR /app
+COPY ./core ./core
+COPY ./server ./server
+RUN go mod init server && go mod tidy
+CMD ["go", "run", "server/server.go"]
