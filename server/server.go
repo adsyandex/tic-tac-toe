@@ -19,9 +19,14 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to initialize game: %v", err)
 	}
-
+	// Настройка маршрутов
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, "Welcome to Tic-Tac-Toe! Use /move to make a move or /board to view the board.")
+	})
 	http.HandleFunc("/move", handleMove)
 	http.HandleFunc("/board", handleBoard)
+
+	// Запуск сервера
 	fmt.Println("Server is running on port 8080")
 	http.ListenAndServe(":8080", nil)
 }
